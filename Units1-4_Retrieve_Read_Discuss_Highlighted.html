@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f7f6">
+<title>Elena · Units 1–4 · Retrieval + Mixed Reading</title>
+<style>
+:root{
+ --ink:#17272e;--muted:#68787e;--bg:#f4f7f5;--paper:#fff;--line:#dbe5e1;
+ --teal:#177d78;--teal2:#e8f6f3;--orange:#dc7545;--orange2:#fff0e8;
+ --blue:#4f75a6;--blue2:#edf3fb;--yellow:#f2ca52;--yellow2:#fff9de;
+ --shadow:0 14px 38px rgba(25,50,58,.08);
+ --u1:#547aa5;--u2:#aa6a43;--u3:#4c8a72;--u4:#9564a6;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(#fbfcfb,var(--bg));color:var(--ink);font:16px/1.58 Inter,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-text-size-adjust:100%}
+button,input,textarea{font:inherit;font-size:16px}.wrap{width:min(1080px,100%);margin:auto;padding:14px}
+.hero{background:linear-gradient(135deg,#fff,#f0faf7 55%,#f0f4fa);border:1px solid var(--line);border-radius:29px;box-shadow:var(--shadow);padding:28px;margin:10px 0 16px}
+.kicker{color:var(--orange);font-weight:950;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(2.5rem,7vw,5.1rem);line-height:.95;letter-spacing:-.055em;margin:.35rem 0 .65rem}
+.hero p{max-width:820px;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}.flow a{text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:13px;padding:9px;text-align:center;font-weight:900}
+.panel{background:#fff;border:1px solid var(--line);border-radius:23px;box-shadow:var(--shadow);padding:20px;margin:15px 0;scroll-margin-top:15px}
+.head{display:flex;justify-content:space-between;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:13px}
+.unit{display:inline-block;color:#fff;border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:950}.u1{background:var(--u1)}.u2{background:var(--u2)}.u3{background:var(--u3)}.u4{background:var(--u4)}
+h2{margin:.3rem 0 .2rem;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.035em;line-height:1.05}.head p{margin:.2rem 0;color:var(--muted)}
+.stage{background:var(--yellow2);color:#735e17;border-radius:999px;padding:7px 10px;font-weight:950;white-space:nowrap}
+.retrieval{background:linear-gradient(135deg,#fffaf0,#fff);border:1px solid #ebdca2;border-radius:18px;padding:14px;margin-bottom:13px}
+.retrieval h3,.langbox h3,.discussion h3{margin:.1rem 0 .7rem}
+.rq{display:grid;grid-template-columns:34px 1fr auto;gap:8px;align-items:center;border-top:1px solid #eadfae;padding:9px 0}.rq:first-of-type{border-top:0}
+.n{width:31px;height:31px;border-radius:9px;background:var(--orange2);color:var(--orange);display:grid;place-items:center;font-weight:950}
+.show{border:1px solid #d4c582;background:#fff;border-radius:9px;min-height:39px;padding:7px 9px;font-weight:900}.ans{display:none;margin-top:5px;color:#176f6a;font-weight:900}.ans.open{display:block}
+.langbox{border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:13px}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{display:inline-flex;align-items:center;gap:4px;background:var(--blue2);border:1px solid #ccd9e9;border-radius:999px;padding:5px 7px 5px 9px;font-size:.79rem;font-weight:850}
+.tts{border:0;background:#fff;border-radius:7px;width:32px;height:32px}
+.ru{color:var(--muted);font-size:.75rem;font-weight:650}
+.reading{background:#fbfcfb;border:1px solid var(--line);border-radius:18px;padding:18px;font-size:1.03rem;line-height:1.78}.reading h3{margin-top:0}.reading p{margin:.8rem 0}\n.target{font-weight:850;border-radius:5px;padding:1px 3px;cursor:pointer;border-bottom:2px solid currentColor}.target.u1{background:#eaf1fa;color:#365f8e}.target.u2{background:#fff1e8;color:#8e5333}.target.u3{background:#eaf6ef;color:#33725c}.target.u4{background:#f5eef8;color:#78468a}.text-tip{display:none;margin-top:10px;background:var(--yellow2);border:1px solid #eadb98;border-radius:10px;padding:9px;color:#665421}.text-tip.open{display:block}
+.discussion{margin-top:13px}.q{display:grid;grid-template-columns:34px 1fr;gap:9px;border-top:1px solid var(--line);padding:10px 0}.qnum{width:31px;height:31px;border-radius:9px;background:var(--teal2);color:var(--teal);display:grid;place-items:center;font-weight:950}
+.support{display:none;margin-top:7px;background:var(--blue2);border:1px solid #cbd9e9;border-radius:10px;padding:8px}.support.open{display:block}
+.btn{border:1px solid var(--line);background:#fff;border-radius:9px;min-height:40px;padding:7px 9px;font-weight:900;margin-top:7px}
+textarea{width:100%;min-height:66px;margin-top:7px;border:1px solid #b8c7c1;border-radius:10px;padding:9px;resize:vertical}
+.retell{margin-top:12px;background:var(--teal2);border:1px solid #bbddd6;border-radius:12px;padding:11px}
+@media(max-width:650px){.wrap{padding:8px}.hero,.panel{padding:15px;border-radius:19px}.flow{grid-template-columns:1fr 1fr}.head{display:block}.stage{display:inline-block;margin-top:8px}.rq{grid-template-columns:31px 1fr}.rq .show{grid-column:2}.reading{padding:13px}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="hero">
+<div class="kicker">Outcomes Pre-Intermediate · Elena</div>
+<h1>RETRIEVE → READ → DISCUSS</h1>
+<p>The same lesson structure as before, but with longer texts and more cross-unit recycling. Each topic starts with <b>fast retrieval</b>, then gives the recommended collocations, a longer text, discussion questions and a retelling task.</p>
+<div class="flow">
+<a href="#u1">Unit 1 · Jobs</a><a href="#u2">Unit 2 · Shopping</a><a href="#u3">Unit 3 · Travel</a><a href="#u4">Unit 4 · Eat</a>
+</div>
+</section>
+<div id="content"></div>
+</main>
+<script>
+
+const HIGHLIGHTS={
+1:[
+["applied for a job","apply for a job","подать заявление на работу","u1"],
+["flexible working hours","flexible working hours","гибкий график","u1"],
+["work experience","work experience","опыт работы","u1"],
+["get on well with her future colleagues","get on well with colleagues","хорошо ладить с коллегами","u1"],
+["signed the contract","sign the contract","подписать контракт","u1"],
+["got stuck in heavy traffic","get stuck in heavy traffic","застрять в сильной пробке","u3"],
+["go past a church","go past the church","пройти мимо церкви","u3"],
+["take the first turning on the right","take the first turning on the right","повернуть на первом повороте направо","u3"],
+["roundabout","roundabout","кольцевая развязка","u3"],
+["directly opposite","directly opposite","прямо напротив","u3"],
+["working from home","work from home","работать из дома","u1"],
+["eating out","eat out","есть вне дома / в ресторане","u4"],
+["good value","good value","хорошее соотношение цены и качества","u4"],
+["staff were friendly","friendly staff","дружелюбный персонал","u4"],
+["portions were surprisingly big","big portions","большие порции","u4"]
+],
+2:[
+["a new pair of trainers","a pair of trainers","пара кроссовок","u2"],
+["a wide selection","a wide selection","широкий выбор","u2"],
+["special offers","special offer","специальное предложение","u2"],
+["top of the range","top of the range","лучший / самый дорогой в линейке","u2"],
+["good value for money","good value for money","хорошее соотношение цены и качества","u2"],
+["too tight","too tight","слишком тесный","u2"],
+["not comfortable enough","not ... enough","недостаточно удобный","u2"],
+["out of stock","out of stock","нет в наличии","u2"],
+["paid by card","pay by card","платить картой","u2"],
+["receipt","receipt","чек","u2"],
+["got stuck in heavy traffic","get stuck in heavy traffic","застрять в сильной пробке","u3"],
+["miss her connection","miss a connection","опоздать на пересадку","u3"],
+["departure time","departure time","время отправления","u3"]
+],
+3:[
+["checked in online","check in online","зарегистрироваться на рейс онлайн","u3"],
+["got stuck in heavy traffic","get stuck in heavy traffic","застрять в сильной пробке","u3"],
+["checking the departures board","check the departures board","проверить табло вылетов","u3"],
+["last call for his flight","last call for my flight","последний вызов на рейс","u3"],
+["boarding gate","boarding gate","выход на посадку","u3"],
+["missed his connection","miss a connection","опоздать на пересадку","u3"],
+["roundabout","roundabout","кольцевая развязка","u3"],
+["go past a church","go past the church","пройти мимо церкви","u3"],
+["directly opposite","directly opposite","прямо напротив","u3"],
+["town hall","town hall","ратуша","u3"]
+],
+4:[
+["works long hours","work long hours","работать подолгу","u1"],
+["arranged a meeting","arrange a meeting","организовать встречу","u1"],
+["signing a large contract","sign a contract","подписать контракт","u1"],
+["friendly staff","friendly staff","дружелюбный персонал","u4"],
+["a big selection of dishes","a big selection of dishes","большой выбор блюд","u4"],
+["good value","good value","хорошее соотношение цены и качества","u4"],
+["out of stock","out of stock","нет в наличии","u2"],
+["grilled fish","grilled fish","рыба на гриле","u4"],
+["not cooked enough","not cooked enough","недостаточно приготовлено","u4"],
+["managing time","manage your time","управлять своим временем","u1"],
+["asked for the bill","ask for the bill","попросить счёт","u4"],
+["discount","discount","скидка","u2"]
+]};
+
+const DATA={"topics": [{"unit": 1, "title": "JOBS", "subtitle": "Work, routines & time management", "retrieval": [["What do you say when you send your details to a company because you want a position?", "apply for a job"], ["What phrase means you spend many hours working?", "work long hours"], ["What do you say if you have a friendly relationship with colleagues?", "get on well with colleagues"], ["What phrase means to organise your time effectively?", "manage your time"], ["What do you call the most important thing you need to do?", "main priority"]], "collocations": [["apply for a job", "подать заявление на работу"], ["work long hours", "работать подолгу"], ["get on well with colleagues", "хорошо ладить с коллегами"], ["manage your time", "управлять своим временем"], ["main priority", "главный приоритет"], ["run a company", "руководить компанией"], ["work experience", "опыт работы"], ["renew a contract", "продлить договор"]], "text_title": "A New Job, a New City, and a Bad First Morning", "text": "Anna had recently applied for a job at a small technology company in another city. The position looked attractive because the company offered flexible working hours, a higher salary and the chance to get useful work experience. During the interview, Anna had liked the atmosphere and thought she would probably get on well with her future colleagues. After receiving the offer, she signed the contract and moved to the city a week before her first day.\n\nOn the morning she started work, however, almost everything went wrong. Anna left home early, but her bus got stuck in heavy traffic. She checked the route on her phone, got off too soon and then had to ask a passer-by how to get to the office. The man told her to go past a church, take the first turning on the right and continue until she reached a large roundabout. The office was directly opposite a hotel.\n\nAnna arrived twenty minutes late and felt terrible. Fortunately, her manager was understanding. He explained that several employees were working from home that day and suggested that Anna spend the morning meeting the team and learning about her new responsibilities. By lunchtime, she was exhausted and hungry. A colleague suggested eating out at a small café nearby. The café was good value, the staff were friendly and the portions were surprisingly big. Anna had grilled chicken and vegetables and finally began to relax.\n\nBy the end of the day, she realised that the job itself was probably a good decision. The difficult journey had simply made the first morning much more stressful than it needed to be.", "questions": [["Why did Anna decide to accept the job?", ["higher salary", "work experience", "get on well with colleagues"]], ["What went wrong on her first morning?", ["get stuck in heavy traffic", "go past a church", "take the first turning on the right"]], ["How did her manager react to her being late?", ["be understanding", "work from home", "new responsibilities"]], ["Why did the café improve the situation?", ["eat out", "good value", "friendly staff", "big portions"]], ["Would you still feel positive about the job after such a first day?", ["first impression", "main priority", "work-life balance", "manage your time"]]]}, {"unit": 2, "title": "SHOPPING", "subtitle": "Buying things, products & complaints", "retrieval": [["What do you keep as proof that you paid for something?", "receipt"], ["What phrase means return an item to the shop?", "take something back"], ["What do shops say when a product is unavailable?", "out of stock"], ["What phrase means there are many different products to choose from?", "a wide selection"], ["What do you say if clothes fit too closely?", "too tight"]], "collocations": [["get a receipt", "получить чек"], ["take something back", "вернуть товар"], ["out of stock", "нет в наличии"], ["a wide selection", "широкий выбор"], ["a pair of trainers", "пара кроссовок"], ["too tight", "слишком тесный"], ["special offer", "специальное предложение"], ["good value for money", "хорошее соотношение цены и качества"]], "text_title": "The Shopping Trip That Became a Travel Problem", "text": "On Saturday, Elena decided to buy a new pair of trainers before an important work trip. She had looked online first and found a store with a wide selection and several special offers. One model looked top of the range but was more expensive than she wanted to pay. Another pair seemed good value for money, so she decided to try them on.\n\nAt the shop, the first pair was too tight and the second pair was not comfortable enough. The assistant finally found another size, but the colour Elena wanted was out of stock. She bought the black pair instead and paid by card. Because she was in a hurry, she put the receipt in her bag without looking at it.\n\nAfter leaving the shop, Elena realised she had less than an hour before her train. She took a taxi, but the city centre was crowded and the car got stuck in heavy traffic. She began to worry that she might miss her connection later in the journey. While she was checking the departure time on her phone, she also noticed that the shop had charged her twice for the trainers.\n\nShe considered going back immediately, but that would almost certainly make her miss the train. In the end, she decided to continue to the station and contact the shop after her trip. She kept the receipt carefully because she knew she might need it to get the extra payment back.\n\nThe situation reminded her that small practical decisions, such as checking a receipt or leaving enough time for a journey, can prevent a surprising amount of stress.", "questions": [["Why did Elena choose the black trainers?", ["wide selection", "special offer", "out of stock", "good value for money"]], ["What shopping problem appeared after she left?", ["receipt", "charged twice", "take something back"]], ["Why did she decide not to return immediately?", ["miss a connection", "departure time", "heavy traffic"]], ["What role did the receipt play?", ["proof of purchase", "get a receipt", "refund"]], ["What would you have done differently?", ["leave enough time", "check the receipt", "take something back"]]]}, {"unit": 3, "title": "GETTING THERE", "subtitle": "Directions, travel & transport", "retrieval": [["What do you do online before arriving at the airport?", "check in online"], ["Where do you look for the latest flight gate information?", "check the departures board"], ["What do you call the place where passengers enter the plane?", "boarding gate"], ["What phrase means traffic stops you from moving?", "get stuck in heavy traffic"], ["What phrase means you arrive too late for your next plane or train?", "miss a connection"]], "collocations": [["check in online", "зарегистрироваться на рейс онлайн"], ["check the departures board", "проверить табло вылетов"], ["boarding gate", "выход на посадку"], ["get stuck in heavy traffic", "застрять в сильной пробке"], ["miss a connection", "опоздать на пересадку"], ["last call for my flight", "последний вызов на мой рейс"], ["go past the church", "пройти мимо церкви"], ["directly opposite", "прямо напротив"]], "text_title": "A Very Avoidable Travel Disaster", "text": "Tom was flying to Prague for a weekend trip. He had checked in online, but he left home later than planned. On the way to the airport, his taxi got stuck in heavy traffic. When he finally arrived, he rushed through security without checking the departures board. He went straight to the gate number he remembered from an old message. Unfortunately, the gate had changed.\n\nWhile he was buying a bottle of water, he heard the last call for his flight. He ran to the new boarding gate, but the doors had already closed. The next flight was three hours later and he missed his connection in Vienna.\n\nThe problems did not end there. When he eventually arrived in Prague, he took the wrong bus into the city centre. He got off near a large roundabout and had to ask for directions to his hotel. A local resident told him to go past a church, continue for two blocks and look for a small street directly opposite the town hall.\n\nBy the time Tom reached the hotel, he was exhausted. Looking back, he admitted that nearly every problem could have been avoided if he had left earlier, checked the information more carefully and not assumed that the gate number would stay the same.", "questions": [["Which of Tom’s mistakes was the most serious?", ["check in online", "departures board", "boarding gate", "last call"]], ["Why did he miss his connection?", ["heavy traffic", "last call", "miss a connection"]], ["What directions did he receive in Prague?", ["go past", "roundabout", "directly opposite", "town hall"]], ["Which problems were bad luck and which were his responsibility?", ["leave earlier", "check information", "assume"]], ["What do you personally do to reduce travel stress?", ["plenty of time", "check in online", "departures board", "connection"]]]}, {"unit": 4, "title": "EAT", "subtitle": "Restaurants, food & experiences", "retrieval": [["What phrase means a restaurant is cheap for the quality you get?", "good value"], ["What do you call employees who are pleasant and helpful?", "friendly staff"], ["What phrase means servings contain a lot of food?", "big portions"], ["What phrase means there are many dishes available?", "a big selection of dishes"], ["How can you politely say you do not want a particular kind of food?", "I don’t really feel like ..."]], "collocations": [["good value", "хорошее соотношение цены и качества"], ["friendly staff", "дружелюбный персонал"], ["big portions", "большие порции"], ["a big selection of dishes", "большой выбор блюд"], ["plenty to choose from", "есть из чего выбрать"], ["get really busy", "становиться очень людным"], ["I don’t really feel like ...", "мне не очень хочется ..."], ["Could we have the bill, please?", "Можно нам счёт, пожалуйста?"]], "text_title": "A Business Lunch That Wasn't Quite as Planned", "text": "Martin works for a company that sells office equipment. He often works long hours and sometimes has to meet clients during lunch. One afternoon, he arranged a meeting with a new customer at a restaurant near the city centre. The meeting was important because the customer was considering signing a large contract.\n\nMartin chose the restaurant because it usually had friendly staff, a big selection of dishes and reasonable prices. He had eaten there several times before and thought it was good value. Unfortunately, that day the restaurant was much busier than usual. The waiter seemed stressed, the service was slow and several dishes were out of stock.\n\nMartin's customer wanted grilled fish, but there was none left. She then ordered chicken, but when it arrived, it was not cooked enough. Martin tried to stay calm and asked the waiter politely if they could replace it. The waiter apologised and offered them free drinks while the kitchen prepared another meal.\n\nWhile they were waiting, Martin and the customer started talking more informally about work. They discussed flexible working, long hours and the difficulty of managing time when a company is growing quickly. The conversation went surprisingly well, and the customer eventually agreed to continue negotiations.\n\nAt the end of the meal, Martin asked for the bill. The restaurant gave them a discount because of the problems. Martin left thinking that the lunch had been far from perfect, but the imperfect situation had actually helped create a more relaxed conversation.", "questions": [["Why was the lunch important for Martin?", ["arrange a meeting", "sign a contract", "customer"]], ["What problems did they have at the restaurant?", ["out of stock", "not cooked enough", "slow service"]], ["How did Martin deal with the problem?", ["ask politely", "replace the dish", "free drinks"]], ["Why did the work conversation become easier?", ["more informal", "manage time", "work long hours"]], ["Would you return to this restaurant?", ["good value", "friendly staff", "big selection of dishes", "discount"]]]}]};
+const STORE="elena_retrieve_read_discuss_";
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+let voices=[];
+function loadVoices(){if('speechSynthesis' in window)voices=speechSynthesis.getVoices()||[]}
+loadVoices();if('speechSynthesis' in window)speechSynthesis.onvoiceschanged=loadVoices;
+function speak(t){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.89;const v=voices.find(x=>/^en-GB$/i.test(x.lang))||voices.find(x=>/^en/i.test(x.lang));if(v)u.voice=v;speechSynthesis.speak(u)}
+function highlightedText(t,unit){
+ let out=esc(t);
+ const arr=[...(HIGHLIGHTS[unit]||[])].sort((a,b)=>b[0].length-a[0].length);
+ arr.forEach(([surface,canonical,ru,cls])=>{
+   const safe=esc(surface);
+   out=out.split(safe).join(`<span class="target ${cls}" tabindex="0" data-en="${esc(canonical)}" data-ru="${esc(ru)}">${safe}</span>`);
+ });
+ return out;
+}
+function paras(t,unit){return t.split(/\n\n+/).map(p=>`<p>${highlightedText(p,unit)}</p>`).join('')}
+
+document.getElementById('content').innerHTML=DATA.topics.map((t,ti)=>`
+<section class="panel" id="u${t.unit}">
+<div class="head"><div><span class="unit u${t.unit}">UNIT ${t.unit}</span><h2>${esc(t.title)}</h2><p>${esc(t.subtitle)}</p></div><div class="stage">Fast retrieval first</div></div>
+
+<div class="retrieval">
+<h3>1 · Fast retrieval</h3>
+${t.retrieval.map((r,i)=>`<div class="rq"><div class="n">${i+1}</div><div><b>${esc(r[0])}</b><div class="ans">${esc(r[1])} <button class="tts" type="button" data-say="${esc(r[1])}">🔊</button></div></div><button class="show" type="button">Reveal</button></div>`).join('')}
+</div>
+
+<div class="langbox">
+<h3>2 · Recommended collocations</h3>
+<div class="chips">${t.collocations.map(c=>`<span class="chip"><span>${esc(c[0])}<span class="ru"> · ${esc(c[1])}</span></span><button class="tts" type="button" data-say="${esc(c[0])}">🔊</button></span>`).join('')}</div>
+</div>
+
+<article class="reading">
+<h3>3 · ${esc(t.text_title)}</h3>
+${paras(t.text,t.unit)}
+<div class="text-tip">Tap a highlighted collocation for its Russian meaning and pronunciation.</div>
+</article>
+
+<div class="discussion">
+<h3>4 · Discussion</h3>
+${t.questions.map((q,i)=>`<div class="q"><div class="qnum">${i+1}</div><div><b>${esc(q[0])}</b><br><button class="btn supportBtn" type="button">Useful collocations</button><div class="support"><div class="chips">${q[1].map(c=>`<span class="chip">${esc(c)} <button class="tts" type="button" data-say="${esc(c)}">🔊</button></span>`).join('')}</div></div><textarea data-save="u${t.unit}_q${i}" placeholder="Notes / key ideas..."></textarea></div></div>`).join('')}
+</div>
+
+<div class="retell"><b>5 · Retelling:</b> retell the text in 6–8 sentences. Use at least <b>5 collocations</b> from this unit and at least <b>2 expressions from another unit</b>.</div>
+</section>
+`).join('');
+
+document.addEventListener('click',e=>{
+ const t=e.target.closest('.tts');if(t){speak(t.dataset.say);return}
+ const target=e.target.closest('.target');if(target){
+   const tip=target.closest('.reading').querySelector('.text-tip');
+   tip.classList.add('open');
+   tip.innerHTML=`<b>${target.dataset.en}</b> — ${target.dataset.ru} <button class="tts" type="button" data-say="${target.dataset.en}">🔊</button>`;
+   return
+ }
+ const s=e.target.closest('.show');if(s){const a=s.parentElement.querySelector('.ans');a.classList.toggle('open');s.textContent=a.classList.contains('open')?'Hide':'Reveal';return}
+ const b=e.target.closest('.supportBtn');if(b){const x=b.nextElementSibling;x.classList.toggle('open');b.textContent=x.classList.contains('open')?'Hide collocations':'Useful collocations'}
+});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('target')){e.preventDefault();e.target.click()}});
+document.querySelectorAll('textarea[data-save]').forEach(t=>{const k=STORE+t.dataset.save;const old=localStorage.getItem(k);if(old!==null)t.value=old;t.addEventListener('input',()=>localStorage.setItem(k,t.value))});
+</script>
+</body></html>
