@@ -117,7 +117,7 @@ audio{width:100%;margin-top:8px}
 <div class="hero-copy">
 <div class="kicker">Outcomes Pre-Intermediate · Unit 5</div>
 <h1>RELAX</h1>
-<p>Interactive self-study version of the supplied Unit 5 opener and <b>What Are Your Plans?</b> spread, with vocabulary, listening, grammar, speaking and retrieval practice.</p>
+<p>Activities, places and equipment · plans and arrangements · negative comments · sport and relaxation.</p>
 <div class="objectives">
 <div class="objective">talk about activities, places and equipment</div>
 <div class="objective">introduce negative comments</div>
@@ -175,7 +175,7 @@ audio{width:100%;margin-top:8px}
 </div>
 
 <div class="ex">
-<div class="exhead"><div class="exno">2</div><div><b>Build six mini-conversations yourself.</b><div class="small">For each sport, answer the prompts as if another person had invited you.</div></div></div>
+<div class="exhead"><div class="exno">2</div><div><b>Speaking · talk about each sport.</b><div class="small">For each sport, speak for 20–30 seconds. Say whether you do it, where you can do it, what equipment you need and whether you would like to do it more often.</div></div></div>
 <div id="miniConvos"></div>
 </div>
 
@@ -254,7 +254,7 @@ M: Six in the morning?!</pre>
 </section>
 
 <section class="panel" id="negative">
-<div class="banner"><h2>Developing conversations · Introducing negative comments</h2></div>
+<div class="banner"><h2>Introducing negative comments</h2></div>
 <div class="grammar">
 <p>We often add a short phrase before a comment that is negative in some way.</p>
 <p><span class="formula">To be honest, ...</span> <span class="formula">I must admit, ...</span> <span class="formula">I have to say, ...</span></p>
@@ -319,10 +319,14 @@ M: Six in the morning?!</pre>
 </div>
 
 <div class="ex">
-<div class="exhead"><div class="exno">13</div><div><b>Speaking · extend your plans.</b><div class="small">Choose one of your answers from Exercise 12 and answer these follow-up questions aloud.</div></div></div>
-<div class="speak-card"><div class="speak-q">Who are you going with?</div><span class="speak-label">Recommended target language</span><div class="chips"><span class="chip">I’m going with ...</span><span class="chip">on my own</span><span class="chip">a friend of mine</span></div><div class="actions"><button class="btn secondary reveal" data-target="e13s1" type="button">Show sample</button></div><div class="model" id="e13s1">I’m going with a friend of mine who lives nearby.</div></div>
-<div class="speak-card"><div class="speak-q">Where are you going to do it?</div><span class="speak-label">Recommended target language</span><div class="chips"><span class="chip">I’m going to ...</span><span class="chip">near here</span><span class="chip">in the city centre</span></div><div class="actions"><button class="btn secondary reveal" data-target="e13s2" type="button">Show sample</button></div><div class="model" id="e13s2">We’re going to meet in the city centre and then decide where to go.</div></div>
-<div class="speak-card"><div class="speak-q">What time are you meeting / leaving?</div><span class="speak-label">Recommended target language</span><div class="chips"><span class="chip">We’re meeting at ...</span><span class="chip">We’re leaving around ...</span><span class="chip">quite early</span></div><div class="actions"><button class="btn secondary reveal" data-target="e13s3" type="button">Show sample</button></div><div class="model" id="e13s3">We’re meeting at about six and we’re thinking of leaving quite early because I have work the next morning.</div></div>
+<div class="exhead"><div class="exno">13</div><div><b>Speaking · describe one of your plans.</b><div class="small">Choose one plan from Exercise 12 and speak for 30–45 seconds. Say who you are going with, where you are going, when it is happening and why you want to do it.</div></div></div>
+<div class="speak-card">
+<div class="speak-q">Tell me about one of your plans.</div>
+<span class="speak-label">Recommended target language</span>
+<div class="chips"><span class="chip">I’m going to ...</span><span class="chip">I’m going with ...</span><span class="chip">We’re meeting at ...</span><span class="chip">I’m thinking of ...</span><span class="chip">because ...</span><span class="chip">I might ... afterwards</span></div>
+<div class="actions"><button class="btn secondary reveal" data-target="e13sample" type="button">Show sample</button></div>
+<div class="model" id="e13sample">I’m meeting a friend in the city centre on Saturday afternoon. We’re going to have lunch and then we might go for a walk if the weather is good. We’re meeting at about two o’clock. I’m looking forward to it because I haven’t seen my friend for a few weeks.</div>
+</div>
 </div>
 </section>
 
@@ -351,7 +355,7 @@ M: Six in the morning?!</pre>
 </div>
 
 <div class="ex" id="gr1">
-<div class="exhead"><div class="exno">1</div><div><b>Complete the conversations with the correct form of the verbs.</b></div></div>
+<div class="exhead"><div class="exno">1</div><div><b>Complete the sentences with the correct form of the verbs.</b></div></div>
 <div class="wordbank"><span class="word">do</span><span class="word">get</span><span class="word">have ×2</span><span class="word">hire</span><span class="word">meet</span><span class="word">see</span><span class="word">play ×2</span><span class="word">watch</span></div>
 <div id="grammarRef1"></div>
 <div class="actions"><button class="btn primary" data-check-group="grammarRef1" type="button">Check</button><button class="btn secondary reveal-answers" data-scope="grammarRef1" type="button">Show answers</button></div>
@@ -410,7 +414,15 @@ const sports=[
 const options=[['a','rod / gear'],['b','court / racket'],['c','pitch / boots'],['d','pool / trunks'],['e','track / shoes'],['f','course / clubs']];
 document.getElementById('sportMatch').innerHTML=sports.map((x,i)=>`<div class="row checkable" data-answer="${x[2]}"><b>${i+1}. ${x[0]}</b><div class="control"><select><option value="">Choose…</option>${options.map(o=>`<option value="${o[0]}">${o[0]} · ${o[1]}</option>`).join('')}</select><button class="check" type="button">Check</button></div><div class="feedback"></div><div class="answer">Answer: ${x[2]} · ${x[1]}</div></div>`).join('');
 
-document.getElementById('miniConvos').innerHTML=sports.map((x,i)=>`<div class="row"><b>${x[0][0].toUpperCase()+x[0].slice(1)}</b><div class="small">Imagine someone asks: “Do you want to ${x[0]==='swimming'?'go swimming':x[0]==='running'?'go running':x[0]==='fishing'?'go fishing':'play '+x[0]} with me on Saturday?” Respond, then ask about the place / equipment.</div><textarea data-save="mini_${i}" placeholder="Your 2–3 line mini-conversation"></textarea></div>`).join('');
+const sportSamples={
+ swimming:'I go swimming from time to time. There is a pool not far from me. You only really need swimming trunks and a towel. I would like to go more often because it is good exercise.',
+ running:'I go running occasionally. I usually run outside rather than on a track. I need comfortable running shoes. I would probably run more often if the weather was better.',
+ golf:'I do not play golf at the moment. You normally need a golf course and a set of clubs. I would try it once, but I am not sure I would do it regularly.',
+ tennis:'I like tennis, although I do not play it very often. You need a court and a racket. I would like to play more because it is active and competitive.',
+ football:'I sometimes watch football, but I rarely play it. You need a pitch, a ball and usually football boots. I prefer other sports, to be honest.',
+ fishing:'I do not go fishing very often. You need a fishing rod and some basic fishing gear. I think it can be relaxing, so I would like to try it somewhere quiet.'
+};
+document.getElementById('miniConvos').innerHTML=sports.map((x,i)=>`<div class="speak-card"><div class="speak-q">${x[0][0].toUpperCase()+x[0].slice(1)}</div><span class="speak-label">Recommended target language</span><div class="chips"><span class="chip">I usually / sometimes / never ...</span><span class="chip">There is a ... near me.</span><span class="chip">You need ...</span><span class="chip">I’d like to ...</span></div><div class="actions"><button class="btn secondary reveal" data-target="sportSample_${i}" type="button">Show sample</button></div><div class="model" id="sportSample_${i}">${esc(sportSamples[x[0]])}</div></div>`).join('');
 
 const plans=[
 ['relaxing and doing nothing special',true],
